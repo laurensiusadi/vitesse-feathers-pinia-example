@@ -7,6 +7,7 @@ declare module 'vue' {
     ClassSelector: typeof import('./components/ClassSelector.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     PaginationButton: typeof import('./components/PaginationButton.vue')['default']
+    PaginationWrapper: typeof import('./components/PaginationWrapper.vue')['default']
     README: typeof import('./components/README.md')['default']
     RowsPerPageSelector: typeof import('./components/RowsPerPageSelector.vue')['default']
     TextInput: typeof import('./components/TextInput.vue')['default']
