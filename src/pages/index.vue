@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useFind } from 'feathers-pinia'
+import { useFind, usePagination } from 'feathers-pinia'
 import { useUsers } from '~/stores/user'
 
 const userStore = useUsers()
@@ -25,10 +25,11 @@ const params = computed(() => {
   }
 })
 const { items: users, latestQuery } = useFind({ model: userStore.Model, params })
+const paginationObject = usePagination(pagination, latestQuery)
 </script>
 
 <template>
-  <pagination-wrapper :pagination="pagination" :latest-query="latestQuery">
+  <pagination-wrapper :pagination="paginationObject">
     <template #header>
       <RowsPerPageSelector v-model:rows-per-page="pagination.$limit" />
       <ClassSelector v-model:school-class="selectedClass" />

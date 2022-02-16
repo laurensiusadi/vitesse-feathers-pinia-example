@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { usePagination } from 'feathers-pinia'
 
-const props = defineProps(['pagination', 'latestQuery'])
+const props = defineProps(['pagination'])
 
-const { next, prev, canNext, canPrev, currentPage, pageCount, toPage } = usePagination(props.pagination, props.latestQuery)
-
+const { next, prev, canNext, canPrev, currentPage, pageCount, toPage } = props.pagination
 </script>
 
 <template>
